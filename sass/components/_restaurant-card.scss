@@ -1,6 +1,6 @@
 .restaurant {
   padding: 2.2rem;
-  max-width: 40rem;
+  max-width: 50rem;
   min-height: 52rem;
   border: 1px solid $color-grey-light-3;
   background-color: #fff;
@@ -23,19 +23,18 @@
   }
 
   &__tags {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(8.9rem, 1fr));
-    gap: 20px;
+    display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   &__tag {
     background-color: $color-grey-light-1;
-    padding: 8px 18px;
+    padding: 0.8rem 1.8rem;
     color: $color-primary;
     font-size: 14px;
-    font-weight: 500;
-    display: inline-block;
+    font-weight: 400;
   }
 
   &__info {

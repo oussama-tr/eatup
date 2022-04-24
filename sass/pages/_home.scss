@@ -1,12 +1,25 @@
 .featured {
   background-color: $color-grey-light-1;
   grid-column: full-start / full-end;
-  padding: 20rem;
+  padding: 15rem;
+
+  &__header {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr max-content;
+    align-items: center;
+    gap: 8rem;
+    margin-bottom: 6rem;
+
+    & > p {
+      color: $color-grey;
+      font-size: 1.4rem;
+    }
+  }
 
   &__restaurants {
     display: grid;
     // todo add breakpoint for line below and set 25rem to other values for ipad before shrinking to mobile single card
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 3rem;
   }
 }

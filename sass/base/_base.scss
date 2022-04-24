@@ -14,16 +14,17 @@ html {
 body {
   font-family: $font-primary, sans-serif;
   color: $color-dark;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.6;
 }
 
 .container {
   display: grid;
+  // todo minmax 15rem
   grid-template-columns:
-    [full-start] minmax(6rem, 1fr) [center-start] repeat(
+    [full-start] 15rem [center-start] repeat(
       3,
       [col-start] minmax(min-content, 1fr) [col-end]
     )
-    [center-end] minmax(6rem, 1fr) [full-end];
+    [center-end] 15rem [full-end];
 }
