@@ -7,11 +7,23 @@
 }
 
 html {
-  box-sizing: border-box;
-  font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+  font-size: 62.5%; // 10/16 -> 1rem = 10px
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 9/16 -> 1rem = 9px
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // 8/16 -> 1rem = 8px
+  }
+
+  @include respond(big-screen) {
+    font-size: 75%; //  12/16  -> 1rem = 12px
+  }
 }
 
 body {
+  box-sizing: border-box;
   font-family: $font-primary, sans-serif;
   color: $color-dark;
   font-weight: 300;
@@ -20,11 +32,18 @@ body {
 
 .container {
   display: grid;
-  // todo minmax 15rem
+  // todo minmax 16.8rem
+  // revize 85%
+  grid-template-rows:
+    [full-start] 3.8rem [padding-start header-start] 85vh [header-end] repeat(
+      3,
+      max-content
+    )
+    [full-end];
   grid-template-columns:
-    [full-start] 15rem [center-start] repeat(
+    [full-start] 3.8rem [padding-start] 13rem [center-start] repeat(
       3,
       [col-start] minmax(min-content, 1fr) [col-end]
     )
-    [center-end] 15rem [full-end];
+    [center-end] 13rem [padding-end ] 3.8rem [full-end ];
 }

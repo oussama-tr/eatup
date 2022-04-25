@@ -1,0 +1,43 @@
+.header {
+  grid-row: padding-start / header-end;
+  grid-column: padding-start / padding-end;
+  background-color: $color-primary;
+  display: flex;
+  flex-direction: column;
+
+  @include respond(tab-port) {
+    grid-row: full-start / header-end;
+    grid-column: full-start / full-end;
+  }
+
+  &__content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    align-items: center;
+    margin: 0 3rem 0 13rem;
+
+    @media only screen and (max-width: 46.875em) {
+    }
+
+    @include respond(tab-port) {
+      margin: 0 3rem 0 3rem;
+    }
+
+    @include respond(phone) {
+      margin: 0 2rem 0 2rem;
+    }
+
+    &__col-1 {
+      & > p {
+      }
+    }
+  }
+
+  &__col-2 {
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
