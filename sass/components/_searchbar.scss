@@ -1,0 +1,40 @@
+.searchbar {
+  background-color: #fff;
+  min-height: 6.2rem;
+  border-radius: 8rem;
+  padding-right: 0.6rem;
+  padding-left: 2rem;
+  display: flex;
+  width: max-content;
+  align-items: center;
+
+  @include respond(tab-port) {
+    width: 100%;
+  }
+
+  &__icon {
+    fill: $color-grey-3;
+    width: 15.75px;
+    height: 18.41px;
+    margin-right: 1rem;
+  }
+
+  input {
+    font-size: 1.4rem;
+    border: none;
+    margin-right: 1rem;
+    width: max-content;
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-3;
+    }
+  }
+}

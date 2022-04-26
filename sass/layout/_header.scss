@@ -15,29 +15,82 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     align-items: center;
-    margin: 0 3rem 0 13rem;
-
-    @media only screen and (max-width: 46.875em) {
-    }
+    margin: 3.75rem 3rem 0 13rem;
 
     @include respond(tab-port) {
-      margin: 0 3rem 0 3rem;
+      margin-left: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(52rem, 1fr));
     }
 
     @include respond(phone) {
-      margin: 0 2rem 0 2rem;
+      margin: 0rem 2rem 0 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
     }
 
     &__col-1 {
+      padding-right: 6rem;
+      z-index: 2;
+
+      @include respond(tab-port) {
+        padding-top: 5rem;
+        padding-right: 0;
+      }
+
+      @include respond(phone) {
+        padding-top: 0;
+      }
+
       & > p {
+        font-size: 1.5rem;
+        line-height: 1.8;
+        font-weight: 300;
+        color: #fff;
+        margin: 3rem 0;
+      }
+    }
+
+    &__col-2 {
+      z-index: 1;
+    }
+
+    &__row {
+      margin-left: 3rem;
+      margin-bottom: 3.25rem;
+      font-size: 1.6rem;
+
+      a {
+        color: #fff;
+        font-weight: 700;
+
+        &:last-child {
+          text-decoration: none;
+        }
+      }
+
+      span {
+        margin: 0 1.5rem;
+        color: rgba(255, 255, 255, 0.3);
+        font-weight: 300;
       }
     }
   }
 
-  &__col-2 {
-  }
-
   &__img {
     width: 100%;
+    scale: (1.25);
+    transform: translateX(-15%);
+
+    @include respond(tab-land) {
+      transform: none;
+      scale: (1);
+    }
+
+    @media only screen and (min-width: 43.75rem) and (max-width: 54.9em) {
+      scale: (0.7);
+    }
+
+    @include respond(phone) {
+      scale: (1);
+    }
   }
 }

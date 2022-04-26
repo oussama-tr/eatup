@@ -5,20 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js" defer></script>
+    <title>Eatup</title>
   </head>
   <body class="container">
     <header class="header">
       <nav class="nav">
         <img src="img/logo.png" alt="Eatup logo" class="nav__logo" />
-        <ul class="nav__list">
+
+        <div class="nav__toggle"> 
+          <input type="checkbox" class="nav__toggle__checkbox" id="nav-toggle" onclick="toggleMenu()"/>
+          <label for="nav-toggle" class="nav__toggle__button">
+            <span class="nav__toggle__icon">&nbsp;</span>
+          </label>
+        </div>
+
+        <ul class="nav__list" id="nav-list">
           <li class="nav__item"><a href="#">Recipes</a></li class="nav__item">
           <li class="nav__item"><a href="#">Experiences</a></li>
           <li class="nav__item"><a href="#">Restaurants</a></li>
@@ -35,18 +47,36 @@
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
             inventore dolor exercitationem. Odio earum excepturi ab rerum cum
-            veniam praesentium odit, aliquam, quaerat repellendus vero velit
-            illo, eaque magnam fugit.
+            veniam praesentium odit, aliquam, quaerat repellendus.
           </p>
-          <div class="header__types">Delivery | Pickup</div>
-          <div class="header__searchbar">Enter Your Delivery address</div>
+          <div class="header__content__row">
+            <a href="#">Delivery</a>
+            <span>|</span>
+            <a href="#">Pickup</a>
+          </div>
+          <form action="#" class="searchbar">
+            <svg class="searchbar__icon">
+              <use xlink:href="img/sprite.svg#icon-map-pin"></use>
+            </svg>
+            <input type="text" placeholder="Enter Your Delivery address"></input>
+            <button class="btn-primary">Search</button>
+          </form>
         </div>
         <div class="header__content__col-2">
-          <img
-            src="img/header-image.png"
+          <picture class="header__content__col-2">
+            <source 
+              srcset="
+                img/header-image-2-2x.png 1x,
+                img/header-image-2-3x.png 2x
+              "
+              media="(max-width: 56.25em)"
+            />
+            <img
+            src="img/header-image-2-3x.png"
             alt="Header image"
             class="header__img"
           />
+          </picture>
         </div>
       </div>
     </header>

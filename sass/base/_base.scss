@@ -35,15 +35,24 @@ body {
   // todo minmax 16.8rem
   // revize 85%
   grid-template-rows:
-    [full-start] 3.8rem [padding-start header-start] 85vh [header-end] repeat(
+    [full-start] 3.8rem [padding-start header-start] 90vh [header-end] repeat(
       3,
       max-content
     )
     [full-end];
   grid-template-columns:
-    [full-start] 3.8rem [padding-start] 13rem [center-start] repeat(
+    [full-start] 3rem [padding-start] 13rem [center-start] repeat(
       3,
       [col-start] minmax(min-content, 1fr) [col-end]
     )
-    [center-end] 13rem [padding-end ] 3.8rem [full-end ];
+    [center-end] 13rem [padding-end ] 3rem [full-end ];
+
+  @include respond(phone) {
+    grid-template-columns:
+      [full-start] 2rem [padding-start] 13rem [center-start] repeat(
+        3,
+        [col-start] minmax(min-content, 1fr) [col-end]
+      )
+      [center-end] 13rem [padding-end ] 2rem [full-end ];
+  }
 }

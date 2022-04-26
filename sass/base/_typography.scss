@@ -3,6 +3,18 @@
   font-weight: 700;
   line-height: 1.2;
   color: #fff;
+
+  @include respond(tab-land) {
+    font-size: 4.4rem;
+  }
+
+  @include respond(tab-port) {
+    font-size: 4.2rem;
+  }
+
+  @include respond(phone) {
+    font-size: 4rem;
+  }
 }
 
 .heading-2 {
