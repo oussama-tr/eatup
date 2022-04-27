@@ -17,14 +17,21 @@
     align-items: center;
     margin: 3.75rem 3rem 0 13rem;
 
+    //these are messy , maybe there is another way other than minmax ?
+
     @include respond(tab-port) {
       margin-left: 3rem;
       grid-template-columns: repeat(auto-fit, minmax(52rem, 1fr));
     }
 
     @include respond(phone) {
-      margin: 0rem 2rem 0 2rem;
+      margin: 2rem;
       grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+      row-gap: 4.8rem;
+    }
+
+    @media only screen and (max-height: 40.625em) {
+      grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
     }
 
     &__col-1 {
@@ -57,6 +64,10 @@
       margin-left: 3rem;
       margin-bottom: 3.25rem;
       font-size: 1.6rem;
+
+      @include respond(phone) {
+        margin-left: 0;
+      }
 
       a {
         color: #fff;

@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="script.js" defer></script>
     <title>Eatup</title>
@@ -23,15 +23,20 @@
       <nav class="nav">
         <img src="img/logo.png" alt="Eatup logo" class="nav__logo" />
 
-        <div class="nav__toggle"> 
-          <input type="checkbox" class="nav__toggle__checkbox" id="nav-toggle" onclick="toggleMenu()"/>
+        <div class="nav__toggle">
+          <input
+            type="checkbox"
+            class="nav__toggle__checkbox"
+            id="nav-toggle"
+            onclick="toggleMenu()"
+          />
           <label for="nav-toggle" class="nav__toggle__button">
             <span class="nav__toggle__icon">&nbsp;</span>
           </label>
         </div>
 
         <ul class="nav__list" id="nav-list">
-          <li class="nav__item"><a href="#">Recipes</a></li class="nav__item">
+          <li class="nav__item"><a href="#">Recipes</a></li>
           <li class="nav__item"><a href="#">Experiences</a></li>
           <li class="nav__item"><a href="#">Restaurants</a></li>
           <li class="nav__item"><a href="#">Need Help?</a></li>
@@ -43,7 +48,7 @@
       </nav>
       <div class="header__content">
         <div class="header__content__col-1">
-          <h1 class="heading-1">Order delicious foods. We will reach</h1>
+          <h1 class="heading-1">Order delicious<br />foods. We will reach</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
             inventore dolor exercitationem. Odio earum excepturi ab rerum cum
@@ -58,13 +63,13 @@
             <svg class="searchbar__icon">
               <use xlink:href="img/sprite.svg#icon-map-pin"></use>
             </svg>
-            <input type="text" placeholder="Enter Your Delivery address"></input>
+            <input type="text" placeholder="Enter Your Delivery address" />
             <button class="btn-primary">Search</button>
           </form>
         </div>
         <div class="header__content__col-2">
           <picture class="header__content__col-2">
-            <source 
+            <source
               srcset="
                 img/header-image-2-2x.png 1x,
                 img/header-image-2-3x.png 2x
@@ -72,16 +77,16 @@
               media="(max-width: 56.25em)"
             />
             <img
-            src="img/header-image-2-3x.png"
-            alt="Header image"
-            class="header__img"
-          />
+              src="img/header-image-2-3x.png"
+              alt="Header image"
+              class="header__img"
+            />
           </picture>
         </div>
       </div>
     </header>
     <section class="how-it-works"></section>
-    <section class="featured">
+    <!-- <section class="featured">
       <div class="featured__header">
         <h2 class="heading-2">Our featured restaurants</h2>
         <p>
@@ -98,7 +103,7 @@
             alt="Bulgarian Restaurant cover image"
             class="restaurant__img"
           />
-          <h3 class="heading-3">Bulgarian Restaurant</h3>
+          <h3 class="heading-4">Bulgarian Restaurant</h3>
           <p>
             Enjoy great Bulgarian cuisine.. Bulgarian wine, Friendly services,
             Good food and nice presentation.
@@ -143,7 +148,7 @@
             alt="Burger Corner cover image"
             class="restaurant__img"
           />
-          <h3 class="heading-3">Burger Corner</h3>
+          <h3 class="heading-4">Burger Corner</h3>
           <p>
             #1 Specialty hamburger restaurant. Signature recipes inspired by
             ingredients from the old and new world. 6 different bread flavors,
@@ -189,7 +194,7 @@
             alt="Coffee House cover image"
             class="restaurant__img"
           />
-          <h3 class="heading-3">Coffee House</h3>
+          <h3 class="heading-4">Coffee House</h3>
           <p>
             Best quality coffee -- espresso, latte, and cappuccino. Also serves
             Cold drinks -- iced coffee, iced tea, and other non-caffeinated
@@ -235,7 +240,7 @@
             alt="Mexican Restaurant cover image"
             class="restaurant__img"
           />
-          <h3 class="heading-3">Mexican Restaurant</h3>
+          <h3 class="heading-4">Mexican Restaurant</h3>
           <p>
             Traditional Mexican cuisine -- authentic dishes and spices. Enjoy a
             vibrant, lovingly preserved, cultural heritage.
@@ -280,7 +285,7 @@
             alt="Pasta House cover image"
             class="restaurant__img"
           />
-          <h3 class="heading-3">Pasta House</h3>
+          <h3 class="heading-4">Pasta House</h3>
           <p>
             A cozy Italian & artisanal fresh Pasta experience. Made in-house
             daily. ... Artisinal Italan & Fresh pasta.
@@ -325,7 +330,7 @@
             alt="Good Food cover image"
             class="restaurant__img"
           />
-          <h3 class="heading-3">Good Food</h3>
+          <h3 class="heading-4">Good Food</h3>
           <p>
             Enjoy great Bulgarian cuisine.. Bulgarian wine, Friendly services,
             Good food and nice presentation.
@@ -365,10 +370,52 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <section class="deals"></section>
     <section class="stories"></section>
     <section class="cta"></section>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer__cta">
+        <h3 class="heading-3">Ready to Subscribe???</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, ad ipisicing elit. Amet magni
+          molestiae rerum minima eos natus quos repudiandae.
+        </p>
+        <form action="#" class="searchbar searchbar--footer">
+          <input type="email" placeholder="Enter your email address" />
+          <button class="btn-primary btn--small">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer__special-offer">
+        <img
+          src="img/offer-icon.png"
+          alt="Special offer icon"
+          class="footer__icon"
+        />
+        <h3 class="heading-3">Special Offer</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur elit. <br />
+          Nulla laboriosam, hic quos exercitationem <br />
+          corrupti doloribus omnis, veniam dolorum officia.
+        </p>
+      </div>
+      <div class="footer__delivery-details">
+        <img
+          src="img/delivery-icon.png"
+          alt="Delivery details icon"
+          class="footer__icon"
+        />
+        <h3 class="heading-3">Delivery Details</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur elit. <br />
+          Nulla laboriosam, hic quos exercitationem <br />
+          corrupti doloribus omnis, veniam dolorum officia.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
+
+<!-- todo: resize searchbar icon for smaller screens its tiny 
+Your -> your in searchbar header
+-->

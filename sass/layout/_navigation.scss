@@ -111,6 +111,10 @@
       font-weight: 400 !important;
       font-size: 2rem !important;
     }
+
+    @include respond(phone) {
+      // figure this out so you don't have to write multiple media queries
+    }
   }
 
   &__toggle {
@@ -163,6 +167,8 @@
         top: 0.9rem;
       }
     }
+
+    //todo : remove checkbox hack and do it with plain all js or jquery
 
     &__checkbox:checked + &__button &__icon {
       background-color: transparent;

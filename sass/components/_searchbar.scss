@@ -20,6 +20,7 @@
   }
 
   input {
+    background: transparent;
     font-size: 1.4rem;
     border: none;
     margin-right: 1rem;
@@ -35,6 +36,18 @@
 
     &::-webkit-input-placeholder {
       color: $color-grey-3;
+    }
+  }
+
+  &--footer {
+    background-color: transparent;
+    border: 1px solid rgba(#fff, 0.5);
+
+    input {
+      color: #fff;
+      &::-webkit-input-placeholder {
+        color: rgba(#fff, 0.5);
+      }
     }
   }
 }

@@ -48,6 +48,12 @@ body {
     [center-end] 13rem [padding-end ] 3rem [full-end ];
 
   @include respond(phone) {
+    grid-template-rows:
+      [full-start] 3.8rem [padding-start header-start] 75vh [header-end] repeat(
+        3,
+        max-content
+      )
+      [full-end];
     grid-template-columns:
       [full-start] 2rem [padding-start] 13rem [center-start] repeat(
         3,
@@ -55,4 +61,27 @@ body {
       )
       [center-end] 13rem [padding-end ] 2rem [full-end ];
   }
+
+  @media only screen and (max-height: 46.875em) {
+    grid-template-rows:
+      [full-start] 3.8rem [padding-start header-start] 1fr [header-end] repeat(
+        3,
+        min-content
+      )
+      [full-end];
+  }
+
+  /*@media only screen and (max-height: 35em) {
+    grid-template-rows:
+      [full-start] 3.8rem [padding-start header-start] 1fr [header-end] repeat(
+        3,
+        min-content
+      )
+      [full-end];
+  }*/
+
+  // use 1fr instead of doing multiple breakpoints , adjust paddings for phone media query
+
+  //another breakpoint for 568 ?? kk or set it to > 100vh abive ??
+  // make header fixed ??
 }

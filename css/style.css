@@ -35,6 +35,11 @@
   border-radius: 5rem;
   cursor: pointer; }
 
+@media only screen and (max-width: 37.5em) {
+  .btn--small {
+    padding: 1.6rem 1.5rem;
+    font-size: 1.3rem; } }
+
 .restaurant {
   padding: 2.2rem;
   max-width: 50rem;
@@ -115,6 +120,7 @@
     height: 18.41px;
     margin-right: 1rem; }
   .searchbar input {
+    background: transparent;
     font-size: 1.4rem;
     border: none;
     margin-right: 1rem;
@@ -126,6 +132,13 @@
       outline: none; }
     .searchbar input::-webkit-input-placeholder {
       color: #9b9c9c; }
+  .searchbar--footer {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5); }
+    .searchbar--footer input {
+      color: #fff; }
+      .searchbar--footer input::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
 
 *,
 *::before,
@@ -156,10 +169,22 @@ body {
 .container {
   display: grid;
   grid-template-rows: [full-start] 3.8rem [padding-start header-start] 90vh [header-end] repeat(3, max-content) [full-end];
-  grid-template-columns: [full-start] 3rem [padding-start] 13rem [center-start] repeat(3, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] 13rem [padding-end] 3rem [full-end]; }
+  grid-template-columns: [full-start] 3rem [padding-start] 13rem [center-start] repeat(3, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] 13rem [padding-end] 3rem [full-end];
+  /*@media only screen and (max-height: 35em) {
+    grid-template-rows:
+      [full-start] 3.8rem [padding-start header-start] 1fr [header-end] repeat(
+        3,
+        min-content
+      )
+      [full-end];
+  }*/ }
   @media only screen and (max-width: 37.5em) {
     .container {
+      grid-template-rows: [full-start] 3.8rem [padding-start header-start] 75vh [header-end] repeat(3, max-content) [full-end];
       grid-template-columns: [full-start] 2rem [padding-start] 13rem [center-start] repeat(3, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] 13rem [padding-end] 2rem [full-end]; } }
+  @media only screen and (max-height: 46.875em) {
+    .container {
+      grid-template-rows: [full-start] 3.8rem [padding-start header-start] 1fr [header-end] repeat(3, min-content) [full-end]; } }
 
 .heading-1 {
   font-size: 5.5rem;
@@ -181,8 +206,57 @@ body {
   font-weight: 500; }
 
 .heading-3 {
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: #fff; }
+  @media only screen and (max-width: 37.5em) {
+    .heading-3 {
+      font-size: 3rem;
+      font-weight: 500; } }
+
+.heading-4 {
   font-size: 2.5rem;
   font-weight: 500; }
+
+.footer {
+  background-color: #000;
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10rem;
+  padding: 21.5rem 3.8rem 3.8rem 3.8rem; }
+  @media only screen and (max-width: 37.5em) {
+    .footer {
+      padding: 9rem 2rem 2rem 2rem; } }
+  .footer__cta {
+    display: grid;
+    justify-items: center;
+    grid-column: 1 / -1; }
+    .footer__cta p {
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 400;
+      font-size: 1.7rem;
+      text-align: center;
+      margin-top: 1.2rem;
+      margin-bottom: 4.9rem; }
+      @media only screen and (max-width: 37.5em) {
+        .footer__cta p {
+          color: #fff;
+          font-size: 1.4rem; } }
+  .footer__special-offer, .footer__delivery-details {
+    display: grid;
+    margin: auto; }
+    @media only screen and (max-width: 37.5em) {
+      .footer__special-offer, .footer__delivery-details {
+        grid-column: 1 / -1; } }
+    .footer__special-offer p, .footer__delivery-details p {
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 300;
+      font-size: 1.6rem;
+      margin-top: 2rem; }
+  .footer__icon {
+    margin-bottom: 3rem;
+    height: 5.993rem; }
 
 .header {
   grid-row: padding-start / header-end;
@@ -206,8 +280,12 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(52rem, 1fr)); } }
     @media only screen and (max-width: 37.5em) {
       .header__content {
-        margin: 0rem 2rem 0 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr)); } }
+        margin: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+        row-gap: 4.8rem; } }
+    @media only screen and (max-height: 40.625em) {
+      .header__content {
+        grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr)); } }
     .header__content__col-1 {
       padding-right: 6rem;
       z-index: 2; }
@@ -230,6 +308,9 @@ body {
       margin-left: 3rem;
       margin-bottom: 3.25rem;
       font-size: 1.6rem; }
+      @media only screen and (max-width: 37.5em) {
+        .header__content__row {
+          margin-left: 0; } }
       .header__content__row a {
         color: #fff;
         font-weight: 700; }

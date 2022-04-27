@@ -1,0 +1,59 @@
+.footer {
+  background-color: #000;
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10rem;
+  // review next line
+  padding: 21.5rem 3.8rem 3.8rem 3.8rem;
+
+  @include respond(phone) {
+    padding: 9rem 2rem 2rem 2rem;
+  }
+
+  &__cta {
+    display: grid;
+    justify-items: center;
+    grid-column: 1 / -1;
+
+    p {
+      color: rgba(#fff, 0.7);
+      font-weight: 400;
+      font-size: 1.7rem;
+      text-align: center;
+      margin-top: 1.2rem;
+      margin-bottom: 4.9rem;
+
+      @include respond(phone) {
+        color: #fff;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &__special-offer,
+  &__delivery-details {
+    display: grid;
+    margin: auto;
+
+    @include respond(phone) {
+      grid-column: 1 / -1;
+    }
+
+    p {
+      color: rgba(#fff, 0.6);
+      font-weight: 300;
+      font-size: 1.6rem;
+      margin-top: 2rem;
+
+      @include respond(phone) {
+        // above is for mobile , adjust accordinly
+      }
+    }
+  }
+
+  &__icon {
+    margin-bottom: 3rem;
+    height: 5.993rem;
+  }
+}
