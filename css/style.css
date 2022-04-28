@@ -236,6 +236,9 @@ body {
 .heading-2 {
   font-size: 4rem;
   font-weight: 500; }
+  @media only screen and (max-width: 37.5em) and (orientation: portrait) {
+    .heading-2 {
+      font-size: 3rem; } }
 
 .heading-3 {
   font-size: 3.2rem;
@@ -590,47 +593,57 @@ body {
       padding: 12rem 3rem; } }
   @media only screen and (max-width: 43.75em) and (orientation: portrait) {
     .featured {
-      padding: 11.4rem 2rem;
-      overflow: hidden; } }
+      padding: 11.4rem 2rem; } }
   @media only screen and (max-width: 37.5em) and (orientation: portrait) {
     .featured {
       background-color: #fff;
-      padding: 0;
-      padding-top: 12rem; } }
+      padding: 12rem 2rem;
+      overflow: hidden; } }
   .featured__header {
     display: grid;
     grid-template-columns: 0.5fr 1fr max-content;
     align-items: center;
     gap: 8rem;
     margin-bottom: 6rem; }
+    @media only screen and (max-width: 75em) {
+      .featured__header {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 1.8rem; } }
+    @media only screen and (max-width: 37.5em) and (orientation: portrait) {
+      .featured__header {
+        margin-bottom: 3.8rem; } }
     .featured__header p {
       color: #5c5d5f;
       font-size: 1.4rem; }
+      @media only screen and (max-width: 75em) {
+        .featured__header p {
+          margin-bottom: 1rem; } }
   .featured__restaurants {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 3rem;
-    justify-items: center;
-    margin-bottom: 12rem; }
+    justify-items: center; }
     @media only screen and (max-width: 56.25em) and (orientation: portrait) {
       .featured__restaurants {
         grid-template-columns: repeat(auto-fit, minmax(34.5rem, 1fr)); } }
     @media only screen and (max-width: 37.5em) and (orientation: portrait) {
       .featured__restaurants {
-        width: calc(100vw - 2rem);
+        width: calc(100vw - 4rem);
         display: inline-flex;
         cursor: grab;
         transform: translateX(0);
-        transition: transform 0.3s ease-out;
-        margin-left: 2rem;
-        margin-bottom: 0; } }
+        transition: transform 0.3s ease-out; } }
     .featured__restaurants__indicator {
       width: 100%;
-      display: flex;
       justify-content: center;
       margin-top: 4rem;
-      margin-bottom: 12rem;
-      user-select: none; }
+      user-select: none;
+      display: none; }
+      @media only screen and (max-width: 37.5em) and (orientation: portrait) {
+        .featured__restaurants__indicator {
+          display: flex; } }
       .featured__restaurants__indicator span {
         width: 16px;
         height: 16px;

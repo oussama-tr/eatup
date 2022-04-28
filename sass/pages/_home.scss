@@ -9,13 +9,12 @@
 
   @include respond(tab-port-small) {
     padding: 11.4rem 2rem;
-    overflow: hidden;
   }
 
   @include respond(phone) {
     background-color: #fff;
-    padding: 0;
-    padding-top: 12rem;
+    padding: 12rem 2rem;
+    overflow: hidden;
   }
 
   &__header {
@@ -25,9 +24,24 @@
     gap: 8rem;
     margin-bottom: 6rem;
 
+    @include respond(tab-land) {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 1.8rem;
+    }
+
+    @include respond(phone) {
+      margin-bottom: 3.8rem;
+    }
+
     p {
       color: $color-grey;
       font-size: 1.4rem;
+
+      @include respond(tab-land) {
+        margin-bottom: 1rem;
+      }
     }
   }
 
@@ -36,29 +50,29 @@
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 3rem;
     justify-items: center;
-    margin-bottom: 12rem;
 
     @include respond(tab-port) {
       grid-template-columns: repeat(auto-fit, minmax(34.5rem, 1fr));
     }
 
     @include respond(phone) {
-      width: calc(100vw - 2rem);
+      width: calc(100vw - 4rem);
       display: inline-flex;
       cursor: grab;
       transform: translateX(0);
       transition: transform 0.3s ease-out;
-      margin-left: 2rem;
-      margin-bottom: 0;
     }
 
     &__indicator {
       width: 100%;
-      display: flex;
       justify-content: center;
       margin-top: 4rem;
-      margin-bottom: 12rem;
       user-select: none;
+      display: none;
+
+      @include respond(phone) {
+        display: flex;
+      }
 
       span {
         width: 16px;
