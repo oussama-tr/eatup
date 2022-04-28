@@ -55,7 +55,7 @@
     p {
       color: rgba(#fff, 0.6);
       font-weight: 300;
-      font-size: 1.6rem;
+      font-size: $default-font-size;
       margin-top: 2rem;
     }
 
@@ -159,7 +159,7 @@
 
   &__copyright-text {
     color: rgba(#fff, $alpha: 0.3);
-    font-size: 1.6rem;
+    font-size: $default-font-size;
     font-weight: 300;
     max-width: 33.33%;
     text-align: center;

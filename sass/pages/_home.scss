@@ -1,7 +1,22 @@
 .featured {
   background-color: $color-grey-light-1;
   grid-column: full-start / full-end;
-  padding: 8rem 16.8rem;
+  padding: 11.4rem 16rem;
+
+  @media only screen and (max-width: 51.9375em) {
+    padding: 12rem 3rem;
+  }
+
+  @include respond(tab-port-small) {
+    padding: 11.4rem 2rem;
+    overflow: hidden;
+  }
+
+  @include respond(phone) {
+    background-color: #fff;
+    padding: 0;
+    padding-top: 12rem;
+  }
 
   &__header {
     display: grid;
@@ -18,8 +33,21 @@
 
   &__restaurants {
     display: grid;
-    // todo add breakpoint for line below and set 25rem to other values for ipad before shrinking to mobile single card
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 3rem;
+    justify-items: center;
+
+    @include respond(tab-port) {
+      grid-template-columns: repeat(auto-fit, minmax(34.5rem, 1fr));
+    }
+
+    @include respond(phone) {
+      width: calc(100vw - 2rem);
+      display: inline-flex;
+      cursor: grab;
+      transform: translateX(0);
+      transition: transform 0.3s ease-out;
+      margin-bottom: 12rem;
+    }
   }
 }

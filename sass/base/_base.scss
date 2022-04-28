@@ -9,16 +9,16 @@
 html {
   font-size: 62.5%; // 10/16 -> 1rem = 10px
 
+  @include respond(big-screen) {
+    font-size: 75%; //  12/16  -> 1rem = 12px
+  }
+
   @include respond(tab-land) {
     font-size: 56.25%; // 9/16 -> 1rem = 9px
   }
 
   @include respond(tab-port) {
     font-size: 50%; // 8/16 -> 1rem = 8px
-  }
-
-  @include respond(big-screen) {
-    font-size: 75%; //  12/16  -> 1rem = 12px
   }
 }
 
@@ -47,7 +47,7 @@ body {
     )
     [center-end] 13rem [padding-end ] 3rem [full-end ];
 
-  @include respond(phone) {
+  @include respond(tab-port-small) {
     grid-template-rows:
       [full-start] 3.8rem [padding-start header-start] 75vh [header-end] repeat(
         3,

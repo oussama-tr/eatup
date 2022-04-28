@@ -37,22 +37,26 @@
   border-radius: 5rem;
   cursor: pointer; }
 
-@media only screen and (max-width: 43.75em) {
+@media only screen and (max-width: 43.75em) and (orientation: portrait) {
   .btn--small {
     padding: 1.6rem 1.5rem;
     font-size: 8px; } }
 
 .restaurant {
   padding: 2.2rem;
-  max-width: 50rem;
-  min-height: 52rem;
   border: 1px solid #e9e9e9;
   background-color: #fff;
   display: grid; }
+  @media only screen and (max-width: 37.5em) and (orientation: portrait) {
+    .restaurant {
+      width: calc(100vw - 4rem);
+      margin-left: 2rem;
+      user-select: none;
+      flex-shrink: 0; } }
   .restaurant__img {
     width: 100%;
     object-fit: cover; }
-  .restaurant p {
+  .restaurant > p {
     font-size: 1.4rem;
     color: #171c22b3;
     margin-bottom: 20px;
@@ -93,8 +97,7 @@
   .restaurant__star {
     fill: #fe8944;
     width: 14px;
-    height: 14px;
-    margin-bottom: -3px; }
+    height: 14px; }
   .restaurant__open-hours {
     font-weight: 700;
     font-size: 1.2rem;
@@ -113,7 +116,7 @@
   display: flex;
   width: max-content;
   align-items: center; }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) and (orientation: portrait) {
     .searchbar {
       width: 100%; } }
   .searchbar__icon {
@@ -127,7 +130,7 @@
     border: none;
     margin-right: 1rem;
     width: max-content; }
-    @media only screen and (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) and (orientation: portrait) {
       .searchbar input {
         width: 100%; } }
     .searchbar input:focus {
@@ -145,7 +148,7 @@
   padding-left: 3rem;
   padding-right: 1.5rem;
   border-radius: 8rem; }
-  @media only screen and (max-width: 43.75em) {
+  @media only screen and (max-width: 43.75em) and (orientation: portrait) {
     .searchbar--footer {
       width: 100%;
       min-height: 4.4rem;
@@ -157,7 +160,7 @@
     color: #fff;
     font-size: 1.6rem;
     border: none; }
-    @media only screen and (max-width: 43.75em) {
+    @media only screen and (max-width: 43.75em) and (orientation: portrait) {
       .searchbar--footer input {
         font-size: 10px;
         font-weight: 400; } }
@@ -175,15 +178,15 @@
 
 html {
   font-size: 62.5%; }
-  @media only screen and (max-width: 75em) {
-    html {
-      font-size: 56.25%; } }
-  @media only screen and (max-width: 56.25em) {
-    html {
-      font-size: 50%; } }
   @media only screen and (min-width: 112.5em) {
     html {
       font-size: 75%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) and (orientation: portrait) {
+    html {
+      font-size: 50%; } }
 
 body {
   box-sizing: border-box;
@@ -204,7 +207,7 @@ body {
       )
       [full-end];
   }*/ }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 43.75em) and (orientation: portrait) {
     .container {
       grid-template-rows: [full-start] 3.8rem [padding-start header-start] 75vh [header-end] repeat(3, max-content) [full-end];
       grid-template-columns: [full-start] 2rem [padding-start] 13rem [center-start] repeat(3, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] 13rem [padding-end] 2rem [full-end]; } }
@@ -220,10 +223,10 @@ body {
   @media only screen and (max-width: 75em) {
     .heading-1 {
       font-size: 4.4rem; } }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) and (orientation: portrait) {
     .heading-1 {
       font-size: 4.2rem; } }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) and (orientation: portrait) {
     .heading-1 {
       font-size: 4rem; } }
 
@@ -235,7 +238,7 @@ body {
   font-size: 3.2rem;
   font-weight: 700;
   color: #fff; }
-  @media only screen and (max-width: 43.75em) {
+  @media only screen and (max-width: 43.75em) and (orientation: portrait) {
     .heading-3 {
       font-size: 3rem;
       font-weight: 500; } }
@@ -243,6 +246,9 @@ body {
 .heading-4 {
   font-size: 2.5rem;
   font-weight: 500; }
+
+.grabbing {
+  cursor: grabbing !important; }
 
 .footer {
   background-color: #000;
@@ -252,7 +258,7 @@ body {
   row-gap: 9rem;
   position: relative;
   padding: 21.5rem 3rem 4.14rem 3rem; }
-  @media only screen and (max-width: 43.75em) {
+  @media only screen and (max-width: 43.75em) and (orientation: portrait) {
     .footer {
       padding: 9rem 2rem 2rem 2rem;
       row-gap: 6rem; } }
@@ -263,7 +269,7 @@ body {
     width: 40%;
     justify-self: center;
     margin-bottom: 5.5rem; }
-    @media only screen and (max-width: 43.75em) {
+    @media only screen and (max-width: 43.75em) and (orientation: portrait) {
       .footer__cta {
         width: 100%;
         margin-bottom: 1rem;
@@ -275,7 +281,7 @@ body {
       text-align: center;
       margin-top: 1.6rem;
       margin-bottom: 5rem; }
-      @media only screen and (max-width: 43.75em) {
+      @media only screen and (max-width: 43.75em) and (orientation: portrait) {
         .footer__cta p {
           color: #fff;
           font-size: 1.4rem;
@@ -283,7 +289,7 @@ body {
   .footer__special-offer, .footer__delivery-details {
     display: grid;
     margin: auto; }
-    @media only screen and (max-width: 43.75em) {
+    @media only screen and (max-width: 43.75em) and (orientation: portrait) {
       .footer__special-offer, .footer__delivery-details {
         grid-column: 1 / -1;
         margin: unset; } }
@@ -301,7 +307,7 @@ body {
       margin-top: 2.7rem;
       display: flex;
       align-items: center; }
-      @media only screen and (max-width: 43.75em) {
+      @media only screen and (max-width: 43.75em) and (orientation: portrait) {
         .footer__special-offer a, .footer__delivery-details a {
           font-weight: 700;
           margin-top: 2.7rem; } }
@@ -313,13 +319,13 @@ body {
     width: 1px;
     right: 50%;
     top: 62%; }
-    @media only screen and (max-width: 43.75em) {
+    @media only screen and (max-width: 43.75em) and (orientation: portrait) {
       .footer__special-offer::before {
         display: none; } }
   .footer__icon {
     margin-bottom: 3rem;
     height: 5.993rem; }
-    @media only screen and (max-width: 43.75em) {
+    @media only screen and (max-width: 43.75em) and (orientation: portrait) {
       .footer__icon {
         height: 4.2rem; } }
   .footer__end {
@@ -328,7 +334,7 @@ body {
     justify-content: space-between;
     align-items: center;
     position: relative; }
-    @media only screen and (max-width: 43.75em) {
+    @media only screen and (max-width: 43.75em) and (orientation: portrait) {
       .footer__end {
         flex-wrap: wrap;
         row-gap: 1.9rem; } }
@@ -339,14 +345,14 @@ body {
       background-color: rgba(65, 65, 65, 0.7);
       position: absolute;
       top: -4rem; }
-      @media only screen and (max-width: 43.75em) {
+      @media only screen and (max-width: 43.75em) and (orientation: portrait) {
         .footer__end::before {
           display: none; } }
   .footer__nav {
     display: flex;
     column-gap: 5.5rem;
     list-style: none; }
-    @media only screen and (max-width: 43.75em) {
+    @media only screen and (max-width: 43.75em) and (orientation: portrait) {
       .footer__nav {
         flex-direction: column;
         flex-basis: 100%;
@@ -361,7 +367,7 @@ body {
   .footer__logo {
     width: 8.886rem;
     height: 2.76rem; }
-    @media only screen and (max-width: 43.75em) {
+    @media only screen and (max-width: 43.75em) and (orientation: portrait) {
       .footer__logo {
         margin: auto; } }
   .footer__copyright-text {
@@ -370,7 +376,7 @@ body {
     font-weight: 300;
     max-width: 33.33%;
     text-align: center; }
-    @media only screen and (max-width: 43.75em) {
+    @media only screen and (max-width: 43.75em) and (orientation: portrait) {
       .footer__copyright-text {
         flex-basis: 100%;
         max-width: unset; } }
@@ -381,7 +387,7 @@ body {
   background-color: #7b4cdf;
   display: flex;
   flex-direction: column; }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) and (orientation: portrait) {
     .header {
       grid-row: full-start / header-end;
       grid-column: full-start / full-end; } }
@@ -391,11 +397,11 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     align-items: center;
     margin: 3.75rem 3rem 0 13rem; }
-    @media only screen and (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) and (orientation: portrait) {
       .header__content {
         margin-left: 3rem;
         grid-template-columns: repeat(auto-fit, minmax(52rem, 1fr)); } }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) and (orientation: portrait) {
       .header__content {
         margin: 2rem;
         grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
@@ -406,11 +412,11 @@ body {
     .header__content__col-1 {
       padding-right: 6rem;
       z-index: 2; }
-      @media only screen and (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) and (orientation: portrait) {
         .header__content__col-1 {
           padding-top: 5rem;
           padding-right: 0; } }
-      @media only screen and (max-width: 37.5em) {
+      @media only screen and (max-width: 37.5em) and (orientation: portrait) {
         .header__content__col-1 {
           padding-top: 0; } }
       .header__content__col-1 > p {
@@ -425,7 +431,7 @@ body {
       margin-left: 3rem;
       margin-bottom: 3.25rem;
       font-size: 1.6rem; }
-      @media only screen and (max-width: 37.5em) {
+      @media only screen and (max-width: 37.5em) and (orientation: portrait) {
         .header__content__row {
           margin-left: 0; } }
       .header__content__row a {
@@ -448,7 +454,7 @@ body {
     @media only screen and (min-width: 43.75rem) and (max-width: 54.9em) {
       .header__img {
         scale: 0.7; } }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) and (orientation: portrait) {
       .header__img {
         scale: 1; } }
 
@@ -464,7 +470,7 @@ body {
   @media only screen and (max-width: 43.75em) {
     .nav {
       justify-content: space-between; } }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) and (orientation: portrait) {
     .nav {
       margin: 2.5rem 2rem; } }
   .nav__logo {
@@ -472,7 +478,7 @@ body {
     height: 3.9rem;
     object-fit: contain;
     margin: 0 5rem; }
-    @media only screen and (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) and (orientation: portrait) {
       .nav__logo {
         margin-left: 0; } }
   .nav__list {
@@ -500,7 +506,7 @@ body {
     margin-right: 3.6rem; }
   .nav__buttons {
     margin: 0 5rem; }
-    @media only screen and (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) and (orientation: portrait) {
       .nav__buttons {
         margin-right: 0; } }
     @media only screen and (max-width: 43.75em) {
@@ -572,7 +578,19 @@ body {
 .featured {
   background-color: #f8fafc;
   grid-column: full-start / full-end;
-  padding: 8rem 16.8rem; }
+  padding: 11.4rem 16rem; }
+  @media only screen and (max-width: 51.9375em) {
+    .featured {
+      padding: 12rem 3rem; } }
+  @media only screen and (max-width: 43.75em) and (orientation: portrait) {
+    .featured {
+      padding: 11.4rem 2rem;
+      overflow: hidden; } }
+  @media only screen and (max-width: 37.5em) and (orientation: portrait) {
+    .featured {
+      background-color: #fff;
+      padding: 0;
+      padding-top: 12rem; } }
   .featured__header {
     display: grid;
     grid-template-columns: 0.5fr 1fr max-content;
@@ -585,4 +603,16 @@ body {
   .featured__restaurants {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 3rem; }
+    gap: 3rem;
+    justify-items: center; }
+    @media only screen and (max-width: 56.25em) and (orientation: portrait) {
+      .featured__restaurants {
+        grid-template-columns: repeat(auto-fit, minmax(34.5rem, 1fr)); } }
+    @media only screen and (max-width: 37.5em) and (orientation: portrait) {
+      .featured__restaurants {
+        width: calc(100vw - 2rem);
+        display: inline-flex;
+        cursor: grab;
+        transform: translateX(0);
+        transition: transform 0.3s ease-out;
+        margin-bottom: 12rem; } }
