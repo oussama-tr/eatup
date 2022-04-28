@@ -36,6 +36,7 @@
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 3rem;
     justify-items: center;
+    margin-bottom: 12rem;
 
     @include respond(tab-port) {
       grid-template-columns: repeat(auto-fit, minmax(34.5rem, 1fr));
@@ -47,7 +48,28 @@
       cursor: grab;
       transform: translateX(0);
       transition: transform 0.3s ease-out;
+      margin-left: 2rem;
+      margin-bottom: 0;
+    }
+
+    &__indicator {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 4rem;
       margin-bottom: 12rem;
+      user-select: none;
+
+      span {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: rgba($color-primary, 0.1);
+
+        &:not(:last-child) {
+          margin-right: 18px;
+        }
+      }
     }
   }
 }

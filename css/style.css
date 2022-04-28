@@ -50,9 +50,12 @@
   @media only screen and (max-width: 37.5em) and (orientation: portrait) {
     .restaurant {
       width: calc(100vw - 4rem);
-      margin-left: 2rem;
       user-select: none;
-      flex-shrink: 0; } }
+      flex-shrink: 0;
+      margin-right: 1rem;
+      transition: transform 0.3s ease-in-out; }
+      .grabbing .restaurant {
+        transform: scale(0.9); } }
   .restaurant__img {
     width: 100%;
     object-fit: cover; }
@@ -249,6 +252,9 @@ body {
 
 .grabbing {
   cursor: grabbing !important; }
+
+.indicator__item--selected {
+  background-color: #7b4cdf !important; }
 
 .footer {
   background-color: #000;
@@ -604,7 +610,8 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 3rem;
-    justify-items: center; }
+    justify-items: center;
+    margin-bottom: 12rem; }
     @media only screen and (max-width: 56.25em) and (orientation: portrait) {
       .featured__restaurants {
         grid-template-columns: repeat(auto-fit, minmax(34.5rem, 1fr)); } }
@@ -615,4 +622,19 @@ body {
         cursor: grab;
         transform: translateX(0);
         transition: transform 0.3s ease-out;
-        margin-bottom: 12rem; } }
+        margin-left: 2rem;
+        margin-bottom: 0; } }
+    .featured__restaurants__indicator {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 4rem;
+      margin-bottom: 12rem;
+      user-select: none; }
+      .featured__restaurants__indicator span {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: rgba(123, 76, 223, 0.1); }
+        .featured__restaurants__indicator span:not(:last-child) {
+          margin-right: 18px; }

@@ -1,6 +1,10 @@
-// get the slider and slides
+// get the slider
 const slider = document.querySelector('.featured__restaurants');
 const slides = Array.from(slider.children);
+
+// get the slider indicator
+const indicator = document.querySelector('.featured__restaurants__indicator');
+const indicators = Array.from(indicator.children);
 
 // media query for mobile portrait devices
 const phoneMediaQuery = window.matchMedia(
@@ -15,7 +19,7 @@ let isDragging = false,
   animationID = 0,
   currentIndex = 0;
 
-const slideWidth = slides[0].getBoundingClientRect().width;
+indicators[0].classList.add('indicator__item--selected');
 
 // add event listeners
 function addListeners() {
@@ -135,4 +139,20 @@ function setPositionByIndex() {
 
 function setSliderPosition() {
   slider.style.transform = `translateX(${currentTranslate}px)`;
+  setIndicator();
+}
+
+function setIndicator() {
+  indicators.forEach((e) => {
+    e.classList.remove('indicator__item--selected');
+  });
+
+  if (currentIndex === 0)
+    indicators[0].classList.add('indicator__item--selected');
+
+  if (currentIndex > 0 && currentIndex < slides.length - 1)
+    indicators[1].classList.add('indicator__item--selected');
+
+  if (currentIndex === slides.length - 1)
+    indicators[2].classList.add('indicator__item--selected');
 }

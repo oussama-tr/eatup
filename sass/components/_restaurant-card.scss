@@ -7,9 +7,14 @@
   @include respond(phone) {
     // todo : leave this last , move on - 6 on safari and device -- 4 on firefox ..
     width: calc(100vw - 4rem);
-    margin-left: 2rem;
     user-select: none;
     flex-shrink: 0;
+    margin-right: 1rem;
+    transition: transform 0.3s ease-in-out;
+
+    .grabbing & {
+      transform: scale(0.9);
+    }
   }
 
   &__img {
