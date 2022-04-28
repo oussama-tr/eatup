@@ -38,16 +38,44 @@
       color: $color-grey-3;
     }
   }
+}
 
-  &--footer {
-    background-color: transparent;
-    border: 1px solid rgba(#fff, 0.5);
+.searchbar--footer {
+  background-color: transparent;
+  border: 1px solid rgba(#fff, 0.5);
+  width: 100%;
+  min-height: 8rem;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  padding-right: 1.5rem;
+  border-radius: 8rem;
 
-    input {
-      color: #fff;
-      &::-webkit-input-placeholder {
-        color: rgba(#fff, 0.5);
-      }
+  @include respond(tab-port-small) {
+    width: 100%;
+    min-height: 4.4rem;
+    padding: 1rem;
+    padding-left: 3rem;
+  }
+
+  input {
+    background: transparent;
+    flex: 1;
+    color: #fff;
+    font-size: 1.6rem;
+    border: none;
+
+    @include respond(tab-port-small) {
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-input-placeholder {
+      color: rgba(132, 132, 132, 0.8);
     }
   }
 }

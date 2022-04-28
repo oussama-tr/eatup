@@ -22,8 +22,8 @@
 }
 
 .btn--small {
-  @include respond(phone) {
+  @include respond(tab-port-small) {
     padding: 1.6rem 1.5rem;
-    font-size: 1.3rem;
+    font-size: 8px;
   }
 }

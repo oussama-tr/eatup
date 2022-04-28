@@ -1,6 +1,7 @@
 /** Media Query Manager **/
 /*
   0-600px:  Phone
+  600px - 700px: Small tablet portrait
   600px - 900px: Tablet portrait
   900px- 1200px: Tablet landscape
   [1200px - 1800px]: is where normal styles apply
@@ -8,6 +9,7 @@
   
   $breakpoint argument choices
   - phone
+  - tab-port-small
   - tab-port
   - tab-land
   - big-screen
@@ -35,10 +37,10 @@
   border-radius: 5rem;
   cursor: pointer; }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 43.75em) {
   .btn--small {
     padding: 1.6rem 1.5rem;
-    font-size: 1.3rem; } }
+    font-size: 8px; } }
 
 .restaurant {
   padding: 2.2rem;
@@ -132,13 +134,37 @@
       outline: none; }
     .searchbar input::-webkit-input-placeholder {
       color: #9b9c9c; }
-  .searchbar--footer {
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.5); }
-    .searchbar--footer input {
-      color: #fff; }
-      .searchbar--footer input::-webkit-input-placeholder {
-        color: rgba(255, 255, 255, 0.5); }
+
+.searchbar--footer {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 100%;
+  min-height: 8rem;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  padding-right: 1.5rem;
+  border-radius: 8rem; }
+  @media only screen and (max-width: 43.75em) {
+    .searchbar--footer {
+      width: 100%;
+      min-height: 4.4rem;
+      padding: 1rem;
+      padding-left: 3rem; } }
+  .searchbar--footer input {
+    background: transparent;
+    flex: 1;
+    color: #fff;
+    font-size: 1.6rem;
+    border: none; }
+    @media only screen and (max-width: 43.75em) {
+      .searchbar--footer input {
+        font-size: 10px;
+        font-weight: 400; } }
+    .searchbar--footer input:focus {
+      outline: none; }
+    .searchbar--footer input::-webkit-input-placeholder {
+      color: rgba(132, 132, 132, 0.8); }
 
 *,
 *::before,
@@ -206,10 +232,10 @@ body {
   font-weight: 500; }
 
 .heading-3 {
-  font-size: 4.8rem;
+  font-size: 3.2rem;
   font-weight: 700;
   color: #fff; }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 43.75em) {
     .heading-3 {
       font-size: 3rem;
       font-weight: 500; } }
@@ -223,40 +249,131 @@ body {
   grid-column: full-start / full-end;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 10rem;
-  padding: 21.5rem 3.8rem 3.8rem 3.8rem; }
-  @media only screen and (max-width: 37.5em) {
+  row-gap: 9rem;
+  position: relative;
+  padding: 21.5rem 3rem 4.14rem 3rem; }
+  @media only screen and (max-width: 43.75em) {
     .footer {
-      padding: 9rem 2rem 2rem 2rem; } }
+      padding: 9rem 2rem 2rem 2rem;
+      row-gap: 6rem; } }
   .footer__cta {
     display: grid;
     justify-items: center;
-    grid-column: 1 / -1; }
+    grid-column: 1 / -1;
+    width: 40%;
+    justify-self: center;
+    margin-bottom: 5.5rem; }
+    @media only screen and (max-width: 43.75em) {
+      .footer__cta {
+        width: 100%;
+        margin-bottom: 1rem;
+        margin-bottom: 4rem; } }
     .footer__cta p {
       color: rgba(255, 255, 255, 0.7);
       font-weight: 400;
       font-size: 1.7rem;
       text-align: center;
-      margin-top: 1.2rem;
-      margin-bottom: 4.9rem; }
-      @media only screen and (max-width: 37.5em) {
+      margin-top: 1.6rem;
+      margin-bottom: 5rem; }
+      @media only screen and (max-width: 43.75em) {
         .footer__cta p {
           color: #fff;
-          font-size: 1.4rem; } }
+          font-size: 1.4rem;
+          margin-bottom: 3.5rem; } }
   .footer__special-offer, .footer__delivery-details {
     display: grid;
     margin: auto; }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 43.75em) {
       .footer__special-offer, .footer__delivery-details {
-        grid-column: 1 / -1; } }
+        grid-column: 1 / -1;
+        margin: unset; } }
     .footer__special-offer p, .footer__delivery-details p {
       color: rgba(255, 255, 255, 0.6);
       font-weight: 300;
       font-size: 1.6rem;
       margin-top: 2rem; }
+    .footer__special-offer a, .footer__delivery-details a {
+      color: #fff;
+      font-weight: 400;
+      font-size: 1.5rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin-top: 2.7rem;
+      display: flex;
+      align-items: center; }
+      @media only screen and (max-width: 43.75em) {
+        .footer__special-offer a, .footer__delivery-details a {
+          font-weight: 700;
+          margin-top: 2.7rem; } }
+  .footer__special-offer::before {
+    content: '';
+    position: absolute;
+    background-color: rgba(65, 65, 65, 0.7);
+    height: 20rem;
+    width: 1px;
+    right: 50%;
+    top: 62%; }
+    @media only screen and (max-width: 43.75em) {
+      .footer__special-offer::before {
+        display: none; } }
   .footer__icon {
     margin-bottom: 3rem;
     height: 5.993rem; }
+    @media only screen and (max-width: 43.75em) {
+      .footer__icon {
+        height: 4.2rem; } }
+  .footer__end {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; }
+    @media only screen and (max-width: 43.75em) {
+      .footer__end {
+        flex-wrap: wrap;
+        row-gap: 1.9rem; } }
+    .footer__end::before {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: rgba(65, 65, 65, 0.7);
+      position: absolute;
+      top: -4rem; }
+      @media only screen and (max-width: 43.75em) {
+        .footer__end::before {
+          display: none; } }
+  .footer__nav {
+    display: flex;
+    column-gap: 5.5rem;
+    list-style: none; }
+    @media only screen and (max-width: 43.75em) {
+      .footer__nav {
+        flex-direction: column;
+        flex-basis: 100%;
+        row-gap: 1.5rem;
+        margin-top: 0.2rem;
+        margin-bottom: 10.9rem; } }
+    .footer__nav__link {
+      text-decoration: none;
+      color: #90959a;
+      font-size: 1.6rem;
+      font-weight: 300; }
+  .footer__logo {
+    width: 8.886rem;
+    height: 2.76rem; }
+    @media only screen and (max-width: 43.75em) {
+      .footer__logo {
+        margin: auto; } }
+  .footer__copyright-text {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1.6rem;
+    font-weight: 300;
+    max-width: 33.33%;
+    text-align: center; }
+    @media only screen and (max-width: 43.75em) {
+      .footer__copyright-text {
+        flex-basis: 100%;
+        max-width: unset; } }
 
 .header {
   grid-row: padding-start / header-end;
