@@ -20,9 +20,30 @@
 .heading-2 {
   font-size: 4rem;
   font-weight: 500;
+  line-height: 1;
 
   @include respond(phone) {
-    font-size: 3rem;
+    font-size: 3.2rem;
+  }
+
+  &--white {
+    line-height: 1;
+    color: #fff;
+    font-weight: 700;
+    font-size: 5.2rem;
+
+    @include respond(tab-land) {
+      font-size: 4.4rem;
+    }
+
+    @include respond(tab-port) {
+      font-size: 4.2rem;
+    }
+
+    @include respond(phone) {
+      font-size: 3rem;
+      font-weight: 500;
+    }
   }
 }
 

@@ -27,3 +27,49 @@
     font-size: 8px;
   }
 }
+
+.store-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 5px 14px;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 15px;
+  background-color: #fff;
+  justify-items: center;
+  align-items: center;
+  max-height: 6.5rem;
+  cursor: pointer;
+
+  @include respond(phone) {
+  }
+
+  &__text {
+    color: #01060e;
+    font-size: 1.2rem;
+    font-weight: 400;
+
+    &--bold {
+      font-weight: 700;
+      font-size: 1.8rem;
+
+      @include respond(phone) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  img {
+    height: 28px;
+    grid-row: 1 / -1;
+
+    @include respond(phone) {
+      height: 19.8px;
+    }
+  }
+
+  span {
+    grid-column: 2 / -1;
+  }
+}

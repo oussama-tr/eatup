@@ -42,6 +42,38 @@
     padding: 1.6rem 1.5rem;
     font-size: 8px; } }
 
+.store-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 5px 14px;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 15px;
+  background-color: #fff;
+  justify-items: center;
+  align-items: center;
+  max-height: 6.5rem;
+  cursor: pointer; }
+  .store-btn__text {
+    color: #01060e;
+    font-size: 1.2rem;
+    font-weight: 400; }
+    .store-btn__text--bold {
+      font-weight: 700;
+      font-size: 1.8rem; }
+      @media only screen and (max-width: 37.5em) and (orientation: portrait) {
+        .store-btn__text--bold {
+          font-size: 12px; } }
+  .store-btn img {
+    height: 28px;
+    grid-row: 1 / -1; }
+    @media only screen and (max-width: 37.5em) and (orientation: portrait) {
+      .store-btn img {
+        height: 19.8px; } }
+  .store-btn span {
+    grid-column: 2 / -1; }
+
 .restaurant {
   padding: 2.2rem;
   border: 1px solid #e9e9e9;
@@ -49,11 +81,12 @@
   display: grid; }
   @media only screen and (max-width: 37.5em) and (orientation: portrait) {
     .restaurant {
-      width: calc(100vw - 4rem);
+      width: 100%;
       user-select: none;
       flex-shrink: 0;
-      margin-right: 1rem;
       transition: transform 0.3s ease-in-out; }
+      .restaurant:not(:first-child) {
+        margin-left: 3rem; }
       .grabbing .restaurant {
         transform: scale(0.9); } }
   .restaurant__img {
@@ -200,7 +233,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: [full-start] 3.8rem [padding-start header-start] 90vh [header-end] repeat(3, max-content) [full-end];
+  grid-template-rows: [full-start] 3.8rem [padding-start header-start] 90vh [header-end] repeat(4, max-content) [full-end];
   grid-template-columns: [full-start] 3rem [padding-start] 13rem [center-start] repeat(3, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] 13rem [padding-end] 3rem [full-end];
   /*@media only screen and (max-height: 35em) {
     grid-template-rows:
@@ -212,11 +245,11 @@ body {
   }*/ }
   @media only screen and (max-width: 43.75em) and (orientation: portrait) {
     .container {
-      grid-template-rows: [full-start] 3.8rem [padding-start header-start] 75vh [header-end] repeat(3, max-content) [full-end];
+      grid-template-rows: [full-start] 3.8rem [padding-start header-start] 75vh [header-end] repeat(4, max-content) [full-end];
       grid-template-columns: [full-start] 2rem [padding-start] 13rem [center-start] repeat(3, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] 13rem [padding-end] 2rem [full-end]; } }
   @media only screen and (max-height: 46.875em) {
     .container {
-      grid-template-rows: [full-start] 3.8rem [padding-start header-start] 1fr [header-end] repeat(3, min-content) [full-end]; } }
+      grid-template-rows: [full-start] 3.8rem [padding-start header-start] 1fr [header-end] repeat(4, min-content) [full-end]; } }
 
 .heading-1 {
   font-size: 5.5rem;
@@ -235,10 +268,26 @@ body {
 
 .heading-2 {
   font-size: 4rem;
-  font-weight: 500; }
+  font-weight: 500;
+  line-height: 1; }
   @media only screen and (max-width: 37.5em) and (orientation: portrait) {
     .heading-2 {
-      font-size: 3rem; } }
+      font-size: 3.2rem; } }
+  .heading-2--white {
+    line-height: 1;
+    color: #fff;
+    font-weight: 700;
+    font-size: 5.2rem; }
+    @media only screen and (max-width: 75em) {
+      .heading-2--white {
+        font-size: 4.4rem; } }
+    @media only screen and (max-width: 56.25em) and (orientation: portrait) {
+      .heading-2--white {
+        font-size: 4.2rem; } }
+    @media only screen and (max-width: 37.5em) and (orientation: portrait) {
+      .heading-2--white {
+        font-size: 3rem;
+        font-weight: 500; } }
 
 .heading-3 {
   font-size: 3.2rem;
@@ -601,7 +650,7 @@ body {
       overflow: hidden; } }
   .featured__header {
     display: grid;
-    grid-template-columns: 0.5fr 1fr max-content;
+    grid-template-columns: 0.5fr 1fr min-content;
     align-items: center;
     gap: 8rem;
     margin-bottom: 6rem; }
@@ -627,10 +676,10 @@ body {
     justify-items: center; }
     @media only screen and (max-width: 56.25em) and (orientation: portrait) {
       .featured__restaurants {
-        grid-template-columns: repeat(auto-fit, minmax(34.5rem, 1fr)); } }
+        grid-template-columns: repeat(auto-fit, minmax(33.5rem, 1fr)); } }
     @media only screen and (max-width: 37.5em) and (orientation: portrait) {
       .featured__restaurants {
-        width: calc(100vw - 4rem);
+        width: calc(100vw - 6rem);
         display: inline-flex;
         cursor: grab;
         transform: translateX(0);
@@ -651,3 +700,51 @@ body {
         background-color: rgba(123, 76, 223, 0.1); }
         .featured__restaurants__indicator span:not(:last-child) {
           margin-right: 18px; }
+
+.cta {
+  grid-column: full-start / full-end;
+  background-color: #7b4cdf;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+  row-gap: 6rem;
+  column-gap: 2rem;
+  align-items: center;
+  padding: 4.2rem 16rem 0 16rem; }
+  @media only screen and (max-width: 37.5em) and (orientation: portrait) {
+    .cta {
+      padding: 4.2rem 2rem 0 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); } }
+  @media only screen and (max-width: 56.25em) and (orientation: portrait) {
+    .cta {
+      padding: 4.2rem 3rem 0 3rem; } }
+  .cta__content {
+    margin: 3.7rem 0; }
+    @media only screen and (max-width: 37.5em) and (orientation: portrait) {
+      .cta__content {
+        margin: 0; } }
+    .cta__content p {
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: #fff;
+      margin-top: 3rem;
+      margin-bottom: 3.7rem; }
+    .cta__content > span {
+      display: inline-block;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2rem; }
+  .cta__btn-container {
+    display: flex;
+    gap: 2.5rem; }
+    @media only screen and (max-width: 37.5em) and (orientation: portrait) {
+      .cta__btn-container {
+        gap: 10px; } }
+  .cta__img {
+    object-fit: contain;
+    align-self: end;
+    justify-self: center;
+    width: 100%; }
+    @media only screen and (max-width: 37.5em) and (orientation: portrait) {
+      .cta__img {
+        width: 80%; } }

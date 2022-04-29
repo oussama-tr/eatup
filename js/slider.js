@@ -83,9 +83,9 @@ window.addEventListener('resize', setPositionByIndex);
 
 // prevent menu popup on long press
 window.oncontextmenu = function (event) {
-  event.preventDefault();
-  event.stopPropagation();
-  return false;
+  //event.preventDefault();
+  //event.stopPropagation();
+  //return false;
 };
 
 function getPositionX(event) {
